@@ -3,9 +3,10 @@ package wsq.study;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
-@SpringBootApplication(scanBasePackages = {"wsq.study.*"})
+@SpringBootApplication(exclude = DataSourceAutoConfiguration.class)
 @EnableTransactionManagement
 @MapperScan({"wsq.study.mapper"})
 public class Application {
